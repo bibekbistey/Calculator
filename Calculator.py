@@ -1,6 +1,6 @@
 from tkinter import *
 root=Tk()
-root.geometry("300x300")
+root.geometry("275x250")
 root.title("Calculator")
 root.iconbitmap("calc.ico")
 root.configure(bg="black")
@@ -26,7 +26,7 @@ def button_sub():
     global sub_value
     global math
     sub_value=float(second_number)
-    math="sum"
+    math="sub"
     e.delete(0, END)
 def button_mul():
     Third_number = e.get()
@@ -51,52 +51,50 @@ def button_equal():
     global final_value
     global math
     if math=="add":
-        final_value=next_value+add_value
+        final_value=add_value+next_value
         e.insert(0,final_value)
     elif math=="sub":
-        final_value =next_value-sub_value
+        final_value =sub_value-next_value
         e.insert(0, final_value)
     elif math=="mult":
-        final_value = next_value*mul_value
+        final_value = mul_value*next_value
         e.insert(0, final_value)
     elif math=="div":
-        final_value = next_value/div_value
+        final_value = div_value/next_value
         e.insert(0, final_value)
 
-mybutton_1 = Button(root, text="1", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0
+mybutton_1 = Button(root, text="1", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
                     , command=lambda: button_click(1))
-mybutton_2=Button(root, text="2", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                  border=0
-                  ,command=lambda : button_click(2))
-mybutton_3 = Button(root, text="3", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 ,command=lambda : button_click(3))
-mybutton_4 = Button (root, text="4", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                     border=0 , command=lambda: button_click(4))
-mybutton_5= Button (root, text="5", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda : button_click(5))
-mybutton_6= Button (root, text="6", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda : button_click(6))
-mybutton_7 = Button(root, text="7", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda : button_click(7))
-mybutton_8 = Button(root, text="8", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda : button_click (8))
-mybutton_9 = Button(root, text="9", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda: button_click(9))
-mybutton_0= Button (root, text="0", padx=30, pady=20,fg="white",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                    border=0 , command=lambda: button_click(0))
-mybutton_add = Button (root, text="+", padx=30, pady=20,fg="Red",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                       border=0 , command=button_add)
-mybutton_equal = Button (root, text="=", padx=30, pady=20,fg="Red",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                         border=0 , command=button_equal)
-mybutton_clear = Button (root, text="Clear", padx=20, pady=20,fg="Red",bg="black",relief=GROOVE,border=0 ,
+mybutton_2 = Button(root, text="2", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(2))
+mybutton_3 = Button(root, text="3", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(3))
+mybutton_4 = Button(root, text="4", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(4))
+mybutton_5 = Button(root, text="5", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(5))
+mybutton_6 = Button(root, text="6", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(6))
+mybutton_7 = Button(root, text="7", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(7))
+mybutton_8 = Button(root, text="8", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(8))
+mybutton_9 = Button(root, text="9", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(9))
+mybutton_0 = Button(root, text="0", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
+                    , command=lambda: button_click(0))
+mybutton_add = Button(root, text="+", padx=16,pady=8,bd=8,fg="white",bg="red",font=("ALGERIAN",10,"bold")
+                    , command=button_add)
+mybutton_equal = Button(root, text="=", padx=16,pady=8,bd=8,fg="white",bg="red",font=("ALGERIAN",10,"bold")
+                          , command=button_equal)
+mybutton_clear = Button(root, text="C", padx=16,pady=8,bd=8,fg="white",bg="red",font=("ALGERIAN",10,"bold") ,
                          command=button_clear)
-mybutton_sub = Button (root, text="-", padx=30, pady=20,fg="red",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                       border=0 , command=button_sub)
-mybutton_mul = Button (root, text="x", padx=30, pady=20,fg="red",bg="black",font=("ALGERIAN",9),relief=GROOVE,
-                       border=0 , command=button_mul)
-mybutton_div = Button (root, text="/", padx=30, pady=20,fg="Red",bg="black",font=("ALGERIAN",10),relief=GROOVE,
-                       border=0 , command=button_div)
+mybutton_sub = Button(root, text="-", padx=16,pady=8,bd=8,fg="white",bg="red",font=("ALGERIAN",10,"bold"),
+                      command=button_sub)
+mybutton_mul =Button(root, text="*", padx=16,pady=8,bd=8,fg="white",bg="red",font=("ALGERIAN",10,"bold") ,
+                     command=button_mul)
+mybutton_div = Button(root, text="/", padx=16,bd=8,pady=8,fg="white",bg="red",font=("ALGERIAN",10,"bold"),
+                      command=button_div)
 
 mybutton_1.grid (row=1, column=0)
 mybutton_2.grid (row=1, column=1)
