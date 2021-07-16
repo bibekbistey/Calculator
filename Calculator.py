@@ -1,12 +1,14 @@
 from tkinter import *
+#Creating Window
 root=Tk()
 root.geometry("275x250")
 root.title("Calculator")
 root.iconbitmap("calc.ico")
 root.configure(bg="black")
-
+#creating entry box
 e = Entry(root, width=46, borderwidth=1,fg="blue")
 e.grid(row=0, column=0, columnspan=7, padx=10, pady=10)
+#defining Functions
 def button_click (number):
     current = e.get()
     e.delete (0, END)
@@ -62,7 +64,7 @@ def button_equal():
     elif math=="div":
         final_value = div_value/next_value
         e.insert(0, final_value)
-
+#Creating Buttons
 mybutton_1 = Button(root, text="1", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
                     , command=lambda: button_click(1))
 mybutton_2 = Button(root, text="2", padx=16,pady=8,bd=8,fg="white",bg="grey",font=("ALGERIAN",10,"bold")
@@ -95,7 +97,7 @@ mybutton_mul =Button(root, text="*", padx=16,pady=8,bd=8,fg="white",bg="red",fon
                      command=button_mul)
 mybutton_div = Button(root, text="/", padx=16,bd=8,pady=8,fg="white",bg="red",font=("ALGERIAN",10,"bold"),
                       command=button_div)
-
+#Button Positions
 mybutton_1.grid (row=1, column=0)
 mybutton_2.grid (row=1, column=1)
 mybutton_3.grid (row=1, column=2)
